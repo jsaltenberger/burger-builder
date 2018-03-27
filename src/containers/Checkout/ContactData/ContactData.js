@@ -175,6 +175,7 @@ class ContactData extends Component {
         config: this.state.orderForm[key]
       });
     }
+
     let form = (
       <form onSubmit={this.orderHandler}>
         {formElementsArray.map(formElement => (
@@ -186,14 +187,17 @@ class ContactData extends Component {
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
             touched={formElement.config.touched}
-            changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+            changed={(event) => this.inputChangedHandler(event, formElement.id)}
+          />
         ))}
         <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
       </form>
     );
+
     if (this.state.loading) {
       form = <Spinner />;
     }
+
     return (
       <div className={classes.ContactData}>
         <h4>Enter your Contact Data</h4>
