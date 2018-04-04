@@ -49,7 +49,7 @@
   position: absolute;
   background-color: white;
   left: 180%;
-  top: -50%;
+  top: 100%;
   border-radius: 40%;
   transform: rotate(60deg);
   box-shadow: inset -1px -3px #c9c9c9;
@@ -85,22 +85,22 @@
   width: 80%;
   height: 8%;
   background: linear-gradient(#7f3608, #702e05);
-  margin: 2% auto;
+  margin: 1% auto;
   border-radius: 15px;
 }
 
 .Cheese {
   width: 90%;
   height: 4.5%;
-  margin: 2% auto;
+  margin: 1% auto;
   background: linear-gradient(#f4d004, #d6bb22);
   border-radius: 20px;
 }
 
 .Salad {
   width: 85%;
-  height: 7%;
-  margin: 2% auto;
+  height: 4%;
+  margin: 1% auto;
   background: linear-gradient(#228c1d, #91ce50);
   border-radius: 20px;
 }
@@ -109,5 +109,5 @@
   width: 80%;
   height: 3%;
   background: linear-gradient(#bf3813, #c45e38);
-  margin: 2% auto;
+  margin: 1% auto;
 }

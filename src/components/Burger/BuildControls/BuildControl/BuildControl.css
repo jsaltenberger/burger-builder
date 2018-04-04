@@ -2,18 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 5px 0;
+  margin: 0;
+}
+
+@media (min-height: 650px){
+  .BuildControl {
+    margin: 5px 0;
+  }
 }
 
 .BuildControl button {
   display: block;
   font: inherit;
-  padding: 5px;
+  padding: 4px;
   margin: 0 5px;
   width: 80px;
   border: 1px solid #AA6817;
   cursor: pointer;
   outline: none;
+  font-size: .8em;
+}
+
+@media (min-height: 650px){
+  .BuildControl button {
+    font-size: 1em;
+    padding: 5px;
+  }
 }
 
 

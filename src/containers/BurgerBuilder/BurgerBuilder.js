@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classes from './BurgerBuilder.css';
 
 import Auxiliary from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
@@ -62,7 +63,7 @@ class BurgerBuilder extends Component {
 
     if (this.props.ings) {
       burger = (
-        <Auxiliary>
+        <Auxiliary className={classes.BurgerBuilder}>
           <Burger ingredients={this.props.ings} />
           <BuildControls
             ingredientAdded={this.props.onIngredientAdded}
