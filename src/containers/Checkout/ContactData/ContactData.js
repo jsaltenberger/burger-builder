@@ -17,7 +17,8 @@ class ContactData extends Component {
         elementType: 'input',
         elementConfig: {
           type: 'text',
-          placeholder: 'Your Name'
+          placeholder: 'Name',
+          label: 'Name'
         },
         value: '',
         validation: {
@@ -30,7 +31,8 @@ class ContactData extends Component {
         elementType: 'input',
         elementConfig: {
           type: 'text',
-          placeholder: 'ZIP Code'
+          placeholder: 'ZIP Code',
+          label: 'ZIP Code'
         },
         value: '',
         validation: {
@@ -46,11 +48,13 @@ class ContactData extends Component {
         elementType: 'select',
         elementConfig: {
           options: [
-            { value: 'fastest', displayValue: 'Fastest' },
-            { value: 'cheapest', displayValue: 'Cheapest' }
-          ]
+            { value: 'visa', displayValue: 'Visa' },
+            { value: 'mastercard', displayValue: 'MasterCard' },
+            { value: 'cash', displayValue: 'Cash' }
+          ],
+          label: 'Payment Method'
         },
-        value: 'fastest',
+        value: 'visa',
         validation: {},
         valid: true
       }
@@ -134,8 +138,8 @@ class ContactData extends Component {
       form = <Spinner />;
     }
     return (
-      <div className={classes.ContactData}>
-        <h4>Enter your Contact Data</h4>
+      <div>
+        <h3>Payment Info</h3>
         {form}
       </div>
     );
