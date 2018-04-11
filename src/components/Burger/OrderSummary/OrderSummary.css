@@ -1,0 +1,35 @@
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+  border: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #888;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.OrderItem {
+  width: 75px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.Total {
+  margin-left: 10px;
+}
+
+.TotalPrice {
+  text-align: right;
+  float: right;
+  margin-right: 20px;
+}
+
+.CheckoutText {
+  margin-top: 2em;
+  margin-bottom: 0;
+}

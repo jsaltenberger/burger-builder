@@ -26,19 +26,6 @@ class ContactData extends Component {
         valid: false,
         touched: false
       },
-      street: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text',
-          placeholder: 'Street'
-        },
-        value: '',
-        validation: {
-          required: true
-        },
-        valid: false,
-        touched: false
-      },
       zipCode: {
         elementType: 'input',
         elementConfig: {
@@ -51,33 +38,6 @@ class ContactData extends Component {
           minLength: 5,
           maxLength: 5,
           isNumeric: true
-        },
-        valid: false,
-        touched: false
-      },
-      country: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text',
-          placeholder: 'Country'
-        },
-        value: '',
-        validation: {
-          required: true
-        },
-        valid: false,
-        touched: false
-      },
-      email: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'email',
-          placeholder: 'Your E-Mail'
-        },
-        value: '',
-        validation: {
-          required: true,
-          isEmail: true
         },
         valid: false,
         touched: false
@@ -133,6 +93,10 @@ class ContactData extends Component {
     this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   }
 
+  checkoutCancelledHandler = () => {
+    this.props.history.goBack();
+  }
+
   render() {
     const formElementsArray = [];
     for (let key in this.state.orderForm) {
@@ -154,7 +118,16 @@ class ContactData extends Component {
             touched={formElement.config.touched}
             changed={(event) => this.inputChangedHandler(event, formElement.id)} />
         ))}
-        <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
+        <Button 
+          btnType="Danger"
+          clicked={this.checkoutCancelled}>
+          CANCEL
+        </Button>
+        <Button
+          btnType="Success"
+          disabled={!this.state.formIsValid}>
+          ORDER
+        </Button>
       </form>
     );
     if (this.props.loading) {

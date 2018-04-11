@@ -8,7 +8,7 @@ const initialState = {
   building: false
 };
 
-const INGREDIENT_PRICES = {
+export const INGREDIENT_PRICES = {
   lettuce: 0.5,
   cheese: 0.4,
   meat: 1.3,

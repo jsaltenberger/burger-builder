@@ -2,26 +2,51 @@ import React, { Component } from 'react';
 
 import Auxiliary from '../../../hoc/Auxiliary';
 import Button from '../../UI/Button/Button';
+import classes from './OrderSummary.css';
+
+import {INGREDIENT_PRICES} from '../../../store/reducers/burgerBuilder';
 
 class OrderSummary extends Component {
+  calculatePriceByIng = (key, amount) => {
+    return (INGREDIENT_PRICES[key] * amount).toFixed( 2 );
+  }
+  
   render () {
     const ingredientSummary = Object.keys( this.props.ingredients )
       .map( igKey => {
         return (
           <li key={igKey}>
-            <span style={{ textTransform: 'capitalize' }}>{igKey}</span>: {this.props.ingredients[igKey]}
-          </li> );
+            <div
+              className={classes.OrderItem}>
+              {igKey}
+            </div>
+             x &nbsp; &nbsp;{ this.props.ingredients[igKey] }
+             <span className={classes.TotalPrice}>
+              { this.calculatePriceByIng(igKey, this.props.ingredients[igKey]) }
+            </span>
+          </li>
+        );
       } );
 
     return (
       <Auxiliary>
         <h3>Your Order</h3>
-        <p>A delicious burger with the following ingredients:</p>
         <ul>
+          <li>
+            <div
+              className={classes.OrderItem}>
+              Base
+            </div>
+            <span className={classes.TotalPrice}>4.00</span>
+          </li>
+
           {ingredientSummary}
         </ul>
-        <p><strong>Total Price: {this.props.price.toFixed( 2 )}</strong></p>
-        <p>Continue to Checkout?</p>
+        <hr/>
+        <p className={classes.Total}><strong>Total
+          <span className={classes.TotalPrice}> {this.props.price.toFixed( 2 )} </span>
+        </strong></p>
+        <p className={classes.CheckoutText}>Continue to Checkout?</p>
         <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>
         <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
       </Auxiliary>
