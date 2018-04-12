@@ -4,8 +4,9 @@ import Burger from '../../Burger/Burger';
 import Button from '../../UI/Button/Button';
 import classes from './CheckoutSummary.css';
 
+import {INGREDIENT_PRICES} from '../../../store/reducers/burgerBuilder';
+
 const checkoutSummary = (props) => {
-  console.log(props);
   const ingredientSummary = Object.keys( props.ingredients )
     .map( igKey => {
       return (
@@ -15,6 +16,9 @@ const checkoutSummary = (props) => {
             {igKey}
           </div>
           x &nbsp; &nbsp;{ props.ingredients[igKey] }
+          <span className={classes.TotalPrice}>
+            { (INGREDIENT_PRICES[igKey] * props.ingredients[igKey]).toFixed( 2 ) }
+          </span>
         </li>
       );
     } );
@@ -27,6 +31,13 @@ const checkoutSummary = (props) => {
       </div>*/}
       <h3>Order Summary</h3>
       <ul>
+        <li>
+          <div
+            className={classes.OrderItem}>
+            Base
+          </div>
+          <span className={classes.TotalPrice}>4.00</span>
+        </li>
         {ingredientSummary}
       </ul>
       <hr/>

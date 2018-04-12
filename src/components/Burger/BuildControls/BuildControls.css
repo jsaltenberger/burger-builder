@@ -12,15 +12,17 @@
 }
 
 .OrderButton {
-  background-color: #DAD735;
+  background-color: #35b958;
   outline: none;
   cursor: pointer;
   border: 1px solid #966909;
-  color: #966909;
+  color: white;
   font-family: inherit;
   font-size: .8em;
   padding: 10px 20px;
   box-shadow: 2px 2px 2px #966909;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
 .BuildControls p {
@@ -42,9 +44,8 @@
 }
 
 .OrderButton:hover, .OrderButton:active {
-  background-color: #A0DB41;
+  background-color: #30a54f;
   border: 1px solid #966909;
-  color: #966909;
 }
 
 .OrderButton:disabled {

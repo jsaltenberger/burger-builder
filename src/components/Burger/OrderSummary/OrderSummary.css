@@ -29,7 +29,7 @@ hr {
   margin-right: 20px;
 }
 
-.CheckoutText {
-  margin-top: 2em;
-  margin-bottom: 0;
+.Buttons {
+  text-align: center;
+  margin-top: 15px;
 }

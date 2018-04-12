@@ -8,6 +8,15 @@
   box-sizing: border-box;
 }
 
+.Form {
+  padding-bottom: 20px;
+}
+
+a {
+  color: #35b958;
+  cursor: pointer;
+}
+
 .switchScreen {
   font-weight: 100;
 }

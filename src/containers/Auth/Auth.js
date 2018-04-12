@@ -116,16 +116,16 @@ class Auth extends Component {
       <div className={classes.Auth}>
         {authRedirect}
         {errorMessage}
-        <form onSubmit={this.submitHandler}>
+        <form onSubmit={this.submitHandler} className={classes.Form}>
           {form}
-          <Button btnType="Success">{this.state.isSignup ? 'Sign Up' : 'Log In'}</Button>
+          <Button btnType="Success">{this.state.isSignup ? 'Sign Up' : 'Login'}</Button>
         </form>
-        {this.state.isSignup ? 'Already registered? ' : 'Not registered? '}
-        <Button
-          clicked={this.switchAuthModeHandler}
+        {this.state.isSignup ? "Already have an account? " : "Don't have an account? "}
+        <a
+          onClick={this.switchAuthModeHandler}
           className={classes.switchScreen}
-          btnType="Danger">{this.state.isSignup ? 'Login here' : 'Create an account'}
-        </Button>
+          >{this.state.isSignup ? 'Login' : 'Sign Up'}
+        </a>.
       </div>
     );
   }

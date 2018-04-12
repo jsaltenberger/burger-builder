@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 import classes from './Checkout.css';
 
@@ -24,10 +23,6 @@ class Checkout extends Component {
         <div className={classes.Checkout}>
           {purchasedRedirect}
           <ContactData />
-          <CheckoutSummary
-            ingredients={this.props.ings}
-            price={this.props.price}
-          />
         </div>
       );
     }

@@ -9,6 +9,7 @@ import Input from '../../../components/UI/Input/Input';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler'
 import * as actions from '../../../store/actions/index';
 import { updateObject, checkValidity } from '../../../shared/utility';
+import CheckoutSummary from '../../../components/Order/CheckoutSummary/CheckoutSummary';
 
 class ContactData extends Component {
   state = {
@@ -122,16 +123,23 @@ class ContactData extends Component {
             touched={formElement.config.touched}
             changed={(event) => this.inputChangedHandler(event, formElement.id)} />
         ))}
-        <Button 
-          btnType="Danger"
-          clicked={this.checkoutCancelled}>
-          CANCEL
-        </Button>
-        <Button
-          btnType="Success"
-          disabled={!this.state.formIsValid}>
-          ORDER
-        </Button>
+        <div className={classes.Spacer}></div>
+        <CheckoutSummary
+          ingredients={this.props.ings}
+          price={this.props.price}
+        />
+        <div className={classes.Buttons}>
+          <Button 
+            btnType="Danger"
+            clicked={this.checkoutCancelled}>
+            Cancel
+          </Button>
+          <Button
+            btnType="Success"
+            disabled={!this.state.formIsValid}>
+            Place Order
+          </Button>
+        </div>
       </form>
     );
     if (this.props.loading) {
@@ -140,7 +148,7 @@ class ContactData extends Component {
     return (
       <div>
         <h3>Payment Info</h3>
-        {form}
+        {form}                 
       </div>
     );
   }
